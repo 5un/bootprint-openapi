@@ -5,8 +5,8 @@
 --}}
                    
 {{#if definitions}}
+    <a name="/models"></a>
     <h2>Schema definitions</h2>
-
     {{#eachSorted definitions}}
         {{>swagger/model model=. title=@key anchor="/definitions" }}
     {{/eachSorted}}

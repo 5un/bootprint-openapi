@@ -25,6 +25,8 @@
     {{#each schemes}}{{.}}{{#unless @last}}, {{/unless}}{{/each}}
 </div>
 
+<a href="#/paths" class="btn btn-primary">Paths</a> <a href="#/models" class="btn btn-primary">Models</a> <a href="#/responses" class="btn btn-primary">Responses</a>
+
 {{#if showTagSummary}}
     {{>swagger/tags}}
 {{else}}
@@ -41,3 +43,12 @@
 
 {{>swagger/definitions definitions=definitions}}
 
+<a href="#" class="btn btn-success sw-btn-back-to-top">UP</a>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $( ".json-schema-example" ).accordion();
+    });
+</script>
