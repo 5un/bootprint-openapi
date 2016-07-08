@@ -1,0 +1,13 @@
+{{!--
+    Renders the response definitions
+--}}
+{{#if responses}}
+<a name="/responses"></a>
+<h4>Responses</h4>
+
+<ul id="sw-response-definitions">
+    {{#each responses}}
+        <li><a name="{{key}}"></a>{{@key}}</li>
+    {{/each}}
+</ul>
+{{/if}}

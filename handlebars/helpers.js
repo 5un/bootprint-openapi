@@ -71,5 +71,11 @@ module.exports = {
       '510': 'Not Extended', // rfc2774, 7
       '511': 'Network Authentication Required' // rfc6585, 6
     }[code]
+  },
+  ifCond: function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
   }
 }

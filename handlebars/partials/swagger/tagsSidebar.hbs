@@ -12,7 +12,23 @@
     <ul>
     {{#each operations}}
     <li>
-        <a href="#operation-{{htmlId path}}-{{htmlId method}}">{{toUpperCase method}} {{path}}</a>
+        {{#ifCond method 'get'}}
+        <span class="label label-primary">{{toUpperCase method}}</span>
+        {{/ifCond}}
+
+        {{#ifCond method 'post'}}
+        <span class="label label-success">{{toUpperCase method}}</span>
+        {{/ifCond}}
+
+        {{#ifCond method 'put'}}
+        <span class="label label-warning">{{toUpperCase method}}</span>
+        {{/ifCond}}
+
+        {{#ifCond method 'delete'}}
+        <span class="label label-danger">{{toUpperCase method}}</span>
+        {{/ifCond}}
+        <a href="#operation-{{htmlId path}}-{{htmlId method}}"> {{path}}</a>
+        
     </li>
     {{/each}}
     </ul>
